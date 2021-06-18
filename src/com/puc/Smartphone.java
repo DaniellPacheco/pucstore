@@ -1,45 +1,25 @@
 package com.puc;
 
 public class Smartphone extends Equipamento{
-    private String tamanhoTela;
-    private String processador;
-    private String memoria;
-    private String armazenamento;
 
-    public Smartphone(String marca, String modelo) {
-        super(marca, modelo);
+    public Smartphone(String marca, String modelo, String memoria, String armazenamento, String tamanhoTela, String processador) {
+        super(marca, modelo, processador, memoria, armazenamento, tamanhoTela);
         this.tipo = "Smartphone";
     }
 
-    public String getTamanhoTela() {
-        return tamanhoTela;
+    @Override
+    public String mostrarPreco() {
+        return "Smartphone importado, no Brasil ta caro!";
     }
 
-    public void setTamanhoTela(String tamanhoTela) {
-        this.tamanhoTela = tamanhoTela;
-    }
-
-    public String getProcessador() {
-        return processador;
-    }
-
-    public void setProcessador(String processador) {
-        this.processador = processador;
-    }
-
-    public String getMemoria() {
-        return memoria;
-    }
-
-    public void setMemoria(String memoria) {
-        this.memoria = memoria;
-    }
-
-    public String getArmazenamento() {
-        return armazenamento;
-    }
-
-    public void setArmazenamento(String armazenamento) {
-        this.armazenamento = armazenamento;
+    @Override
+    public String listarEquipamento() {
+        return
+            "Tipo: " + this.getTipo() + "\n" +
+            "Marca: " + this.getMarca() + "\n" +
+            "Modelo: " + this.getModelo() + "\n" +
+            "Memoria: " + this.getMemoria() + "\n" +
+            "Armazenamento: " + this.getArmazenamento() + "\n" +
+            "Observação: " + this.mostrarPreco() + "\n";
     }
 }

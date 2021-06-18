@@ -6,40 +6,27 @@ public class Notebook extends Equipamento{
     private String memoria;
     private String armazenamento;
 
-    public Notebook(String marca, String modelo) {
-        super(marca, modelo);
+    public Notebook (String marca, String modelo, String memoria, String armazenamento, String tamanhoTela, String processador) {
+        super(marca, modelo, processador, memoria, armazenamento, tamanhoTela);
         this.tipo = "Notebook";
     }
 
-    public String getTamanhoTela() {
-        return tamanhoTela;
+    @Override
+    public String mostrarPreco() {
+        return "Notebook importado, no Brasil ta caro!";
     }
 
-    public void setTamanhoTela(String tamanho_tela) {
-        this.tamanhoTela = tamanho_tela;
-    }
-
-    public String getProcessador() {
-        return processador;
-    }
-
-    public void setProcessador(String processador) {
-        this.processador = processador;
-    }
-
-    public String getMemoria() {
-        return memoria;
-    }
-
-    public void setMemoria(String memoria) {
-        this.memoria = memoria;
-    }
-
-    public String getArmazenamento() {
-        return armazenamento;
-    }
-
-    public void setArmazenamento(String armazenamento) {
-        this.armazenamento = armazenamento;
+    @Override
+    public String listarEquipamento() {
+        return
+            "Tipo: " + this.getTipo() + "\n" +
+            "Marca: " + this.getMarca() + "\n" +
+            "Modelo: " + this.getModelo() + "\n" +
+            "Processador: " + this.getProcessador() + "\n" +
+            "Memoria: " + this.getMemoria() + "\n" +
+            "Armazenamento: " + this.getArmazenamento() + "\n" +
+            "Armazenamento: " + this.getTamanhoTela() + "\n" +
+            "Tamanho de Tela: " + getTamanhoTela() + "\n" +
+            "Observação: " + this.mostrarPreco() + "\n";
     }
 }

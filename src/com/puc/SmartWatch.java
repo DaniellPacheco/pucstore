@@ -1,36 +1,27 @@
 package com.puc;
 
-public class SmartWatch extends Equipamento{
-    private String tamanhoTela;
-    private String tipoPulseira;
-    private String cor;
+public class SmartWatch extends Equipamento {
 
-    public SmartWatch(String marca, String modelo) {
-        super(marca, modelo);
+    public SmartWatch (String marca, String modelo, String memoria, String armazenamento, String tamanhoTela, String processador) {
+        super(marca, modelo, processador, memoria, armazenamento, tamanhoTela);
         this.tipo = "SmartWatch";
     }
 
-    public String getTamanhoTela() {
-        return tamanhoTela;
+    @Override
+    public String mostrarPreco() {
+        return "SmartWatch importado, no Brasil ta caro!";
     }
 
-    public void setTamanhoTela(String tamanhoTela) {
-        this.tamanhoTela = tamanhoTela;
-    }
-
-    public String getTipoPulseira() {
-        return tipoPulseira;
-    }
-
-    public void setTipoPulseira(String tipoPulseira) {
-        this.tipoPulseira = tipoPulseira;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
+    @Override
+    public String listarEquipamento() {
+        return
+            "Tipo: " + this.getTipo() + "\n" +
+            "Marca: " + this.getMarca() + "\n" +
+            "Modelo: " + this.getModelo() + "\n" +
+            "Processador: " + this.getProcessador() + "\n" +
+            "Memoria: " + this.getMemoria() + "\n" +
+            "Armazenamento: " + this.getArmazenamento() + "\n" +
+            "Armazenamento: " + this.getTamanhoTela() + "\n" +
+            "Observação: " + this.mostrarPreco() + "\n";
     }
 }
